@@ -51,7 +51,11 @@ List<OutputRow> object = TableParser.getInstance().tableToObject("dist/template.
 ```
 
 ## Results
+
+![image](https://github.com/Scicrop/soil_table_reader/assets/692043/abb70710-fd29-41c1-9949-1eca3e4fd6d4)
+
 Here you can see an example of just one row extracted from PDF table:
+
 ```js
 [
     {
