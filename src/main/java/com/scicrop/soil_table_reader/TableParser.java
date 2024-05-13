@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.scicrop.soil_table_reader.utils.BasicHelper;
 import com.scicrop.soil_table_reader.utils.Column;
+import com.scicrop.soil_table_reader.utils.OutputRow;
 import com.scicrop.soil_table_reader.utils.Template;
 
 import technology.tabula.ObjectExtractor;
@@ -33,8 +34,8 @@ public class TableParser {
 	}
 
 
-	public List<List<Column>> tableToObject(String templatePath, String pdfPath) throws Exception {
-		List<List<Column>> output_rows = new ArrayList<>();
+	public List<OutputRow> tableToObject(String templatePath, String pdfPath) throws Exception {
+		List<OutputRow> output_rows = new ArrayList<>();
 
 		String templateJsonStr = BasicHelper.getInstance().readTextFileToString(new File(templatePath));
 
@@ -83,7 +84,7 @@ public class TableParser {
 						}
 
 
-						output_rows.add(output_columns);
+						output_rows.add(new OutputRow(output_columns));
 						countRow++;
 
 					}
@@ -99,7 +100,7 @@ public class TableParser {
 
 
 	public String tableToJsonString(String templatePath, String pdfPath) throws Exception {
-		List<List<Column>> output_rows = tableToObject(templatePath, pdfPath);
+		List<OutputRow> output_rows = tableToObject(templatePath, pdfPath);
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(output_rows);
 	}
