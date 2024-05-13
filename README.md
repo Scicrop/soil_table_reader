@@ -10,6 +10,36 @@ Tabula has the ability to detect tables, however you can define a region (a rect
 
 ![image17568](https://github.com/Scicrop/soil_table_reader/assets/692043/b54cd850-d37d-4040-bc01-bd9788007652)
 
+### List of all template parameters
+```js
+{
+	"columns": [	
+			{"column": "analysis_code", "description": "Código da Análise", "type": "String", "unit":""},
+			{"column": "sample", "description": "Amostra", "type": "String", "unit":""},
+			{"column": "ph_1", "description": "pH H2O", "type": "Float", "unit":""},
+			{"column": "ph_2", "description": "pH CaCl2", "type": "Float", "unit":""},
+			{"column": "mo", "description": "M.O.", "type": "Integer", "unit":"g dm-3"},
+			{"column": "p_mg", "description": "P", "type": "Float", "unit":"mg dm-3"},
+			{"column": "k_plus_mg", "description": "K+", "type": "Integer", "unit":"mg dm-3"},
+			{"column": "so4_3_minus_mg", "description": "SO4 2-", "type": "Integer", "unit":"mg dm-3"},
+			{"column": "k_plus_cmol", "description": "K+", "type": "Float", "unit":"cmol c dm-3"},
+			{"column": "ca2_plus_cmol", "description": "Ca2+", "type": "Float", "unit":"cmol c dm-3"},
+			{"column": "mg2_plus_cmol", "description": "Mg2+", "type": "Float", "unit":"cmol c dm-3"},
+			{"column": "ca_plus_mg_cmol", "description": "Ca+Mg", "type": "Float", "unit":"cmol c dm-3"},
+			{"column": "al3_plus_cmol", "description": "Al3+", "type": "Float", "unit":"cmol c dm-3"},
+			{"column": "h_plus_al_cmol", "description": "H+Al", "type": "Float", "unit":"cmol c dm-3"}
+		   ],
+	"options": {
+				"discard_rows":[0,1], 
+				"name":"Análise Química",
+				"top": 100,
+				"left": 30,
+				"bottom": 300,
+				"right": 500
+				}
+}
+```
+
 ## Implementation
 ### Return a JSON String
 ```java
@@ -17,7 +47,7 @@ String jsonOutputString = TableParser.getInstance().tableToJsonString("dist/temp
 ```
 ### Return an Object
 ```java
-List<List<Column>> object = TableParser.getInstance().tableToObject("dist/template.json", "/tmp/laudo.pdf");
+List<OutputRow> object = TableParser.getInstance().tableToObject("dist/template.json", "/tmp/laudo.pdf");
 ```
 
 ## Results
