@@ -19,3 +19,108 @@ String jsonOutputString = TableParser.getInstance().tableToJsonString("dist/temp
 ```java
 List<List<Column>> object = TableParser.getInstance().tableToObject("dist/template.json", "/tmp/laudo.pdf");
 ```
+
+## Results
+Here you can see an example of just one row extracted from PDF table:
+```js
+[
+    {
+        "column": "analysis_code",
+        "description": "Código da Análise",
+        "type": "String",
+        "unit": "",
+        "value": "Analysis-0001"
+    },
+    {
+        "column": "sample",
+        "description": "Amostra",
+        "type": "String",
+        "unit": "",
+        "value": "Farm A 0-20"
+    },
+    {
+        "column": "ph_1",
+        "description": "pH H2O",
+        "type": "Float",
+        "unit": "",
+        "value": 5.3
+    },
+    {
+        "column": "ph_2",
+        "description": "pH CaCl2",
+        "type": "Float",
+        "unit": "",
+        "value": 4.7
+    },
+    {
+        "column": "mo",
+        "description": "M.O.",
+        "type": "Integer",
+        "unit": "g dm-3",
+        "value": "28"
+    },
+    {
+        "column": "p_mg",
+        "description": "P",
+        "type": "Float",
+        "unit": "mg dm-3",
+        "value": 0.71
+    },
+    {
+        "column": "k_plus_mg",
+        "description": "K+",
+        "type": "Integer",
+        "unit": "mg dm-3",
+        "value": "64"
+    },
+    {
+        "column": "so4_3_minus_mg",
+        "description": "SO4 2-",
+        "type": "Integer",
+        "unit": "mg dm-3",
+        "value": "6"
+    },
+    {
+        "column": "k_plus_cmol",
+        "description": "K+",
+        "type": "Float",
+        "unit": "cmol c dm-3",
+        "value": 0.17
+    },
+    {
+        "column": "ca2_plus_cmol",
+        "description": "Ca2+",
+        "type": "Float",
+        "unit": "cmol c dm-3",
+        "value": 1.21
+    },
+    {
+        "column": "mg2_plus_cmol",
+        "description": "Mg2+",
+        "type": "Float",
+        "unit": "cmol c dm-3",
+        "value": 0.51
+    },
+    {
+        "column": "ca_plus_mg_cmol",
+        "description": "Ca+Mg",
+        "type": "Float",
+        "unit": "cmol c dm-3",
+        "value": 1.73
+    },
+    {
+        "column": "al3_plus_cmol",
+        "description": "Al3+",
+        "type": "Float",
+        "unit": "cmol c dm-3",
+        "value": 0.25
+    },
+    {
+        "column": "h_plus_al_cmol",
+        "description": "H+Al",
+        "type": "Float",
+        "unit": "cmol c dm-3",
+        "value": 5.32
+    }
+]
+```
